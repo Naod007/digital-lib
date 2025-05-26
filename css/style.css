@@ -1,0 +1,712 @@
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #F1FAFF;
+    color: #333;
+}
+
+
+/* Header and Navigation Styles */
+header {
+    background-color: #F1FAFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+.logo {
+    font-size: 2.7rem;
+    font-weight: bold;
+    font-family: "UnifrakturMaguntia", cursive;
+    color: #0077B6;
+}
+
+.nav-links {
+    display: flex;
+    gap: 4rem;
+    flex-direction: row;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #FF6B6B;
+    padding: 0.4rem 0.5rem;
+    text-decoration: none;
+    transition:0.3s ease;
+    font-family: "Heebo", sans-serif;
+    
+    display: flex;
+    flex-direction: row;
+
+}
+.nav-links li{
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-links li:hover{
+    transform: translateY(-4px);
+
+}
+
+.nav-links li a.active,
+.nav-links li a:hover {
+    border-bottom: 1px solid #0077B6;
+    color:#FF6B6B;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.signin-btn,
+.support-btn {
+    background-color: #F1FAFF;
+    color: #0077B6;
+    border: none;
+    text-decoration: none;
+    padding: 0.8rem 1.3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.support-btn{
+    border: 1px solid #0077B6;
+}
+.signin-btn{
+    background: transparent;
+    color: #322020;
+}
+
+.signin-btn:hover{
+    transform: translateY(-4px);
+    background-color: #F1FAFF;
+    color: #0077B6;
+}
+.support-btn:hover {
+    background-color: #F1FAFF;
+    transform: translateY(-4px);
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.toggle .line2 {
+    opacity: 0;
+}
+
+.hamburger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/* Main Content Styles */
+main {
+    padding: 1.8% 5%;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #FF6B6B;
+    margin-bottom: 1rem;
+}
+
+hr {
+    width: 100px;
+    border: 1px solid #0056b3;
+    margin: 0.5rem 0;
+}
+
+/* Featured Section Styles */
+.featured-section {
+    overflow: hidden;
+}
+
+.featured-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    
+}
+
+.featured-container {
+    padding: 1% 0.5%;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+}
+
+.featured-container::-webkit-scrollbar {
+    display: none;
+}
+
+.featured-book {
+    flex: 0 0 50%; 
+    height: 100%;
+    min-width: 50%;
+    max-width: 50%;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+}
+
+.featured-book:hover {
+    transform: translateY(-5px);
+}
+
+.featured-banner {
+    background-repeat: no-repeat;
+    height: 300px;
+    background-size: cover;
+    background-position: top;
+}
+
+.featured-content {
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.featured-content h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.featured-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.read-btn {
+    display: inline-block;
+    background-color: #0077B6;
+    color: #F1FAFF;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: 0.3s ease;
+}
+
+.read-btn:hover {
+    background-color: #0056b3;
+}
+
+.but{
+    position: absolute;
+    z-index: 1;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: right;
+    margin-right: 80px;
+}
+
+.slider-nav {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 10px;
+    margin: 0 ;
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 3rem;
+    margin-top: 10px;
+    width: 3rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1;
+}
+
+.slider-nav:hover {
+    background-color: rgba(220, 220, 220, 0.9);
+}
+
+.slider-nav.prev {
+    left: 0.5rem;
+}
+
+.slider-nav.next {
+    right: 0.5rem;
+}
+
+/* Trending and Favorites Section Styling */
+.trending-section,
+.favorites-section {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.books-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.7rem;
+    flex-wrap: wrap;
+}
+
+.book-card {
+    border-radius: 10px;
+    width: 180px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-banner {
+    min-height: 275px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.book-info {
+    padding: 1rem;
+}
+
+.book-info h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.book-author {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+/* Boks section styling */
+.all-books-section {
+    padding: 1rem;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.search-box input[type="text"] {
+    flex-grow: 1;
+    outline: none;
+    padding: 1rem;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-box button {
+    background-color: #0077B6;
+    color: #F1FAFF;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.load-more-btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Book Details Sectons Styling */
+.book-details-section {
+    padding: 2rem;
+}
+
+.book-details-container {
+    display: flex;
+    gap: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.book-cover {
+    flex: 1;
+}
+
+.book-banner-large {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.book-info-details {
+    flex: 2;
+}
+
+.book-info-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-meta-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.book-meta-details span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.book-meta-details span i {
+    margin-right: 0.3rem;
+}
+
+.book-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.book-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.download-btn {
+    background-color: #28a745;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+}
+
+/* Contact Section Styleing*/
+.contact-section {
+    padding: 2rem;
+}
+
+.contact-container {
+    display: flex;
+    gap: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info p i {
+    margin-right: 0.5rem;
+}
+
+.contact-form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.3rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #e4f5fe;
+    border-top: 1px solid #0077B6;
+    color: #0077B6;
+    padding: 3rem 0;
+}
+
+.footer-content {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    vertical-align: top;
+}
+
+.footer-section {
+    flex: 1;
+    margin-right: 2rem;
+    margin-left: 3rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #FF6B6B;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #0077B6;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1040px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 10vh;
+        background: #e4f5fe;
+        width: 100%;
+
+    }
+
+    .nav-links li{
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .featured-container {
+        margin-right: 0;
+    }
+
+    .featured-book {
+        flex: 0 0 100%; 
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .book-details-container {
+        flex-direction: column;
+    }
+
+    .book-cover {
+        text-align: center;
+    }
+
+    .book-banner-large {
+        width: 100%;
+        height: 300px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        align-items: self-start;
+    }
+
+    .footer-section {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+
+.hamburger {
+    display: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-btn {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 1.7rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.nav
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    gap: 0.5rem;
+    z-index: 1; 
+}
+
+.nav-links.active li a {
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+
+@media (max-width:1040px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .but{
+        margin-right: 15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
+
+@media(max-width: 881px){
+    .footer-content{
+        flex-direction: column;
+        text-align: left;
+    }
+}
+
+@media(max-width : 480px ){
+    .all-books-section{
+        padding: 0;
+        margin: 0;
+    }
+}
