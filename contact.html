@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Reader - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <header>
+        <nav class="navbar">
+            <div class="logo">Episteme</div>
+            <div class="hamburger">
+                <button class="menu-btn">☰</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul> 
+            <div class="nav-buttons">
+                <a href="#" class="signin-btn">Sign In</a>
+                <a href="#" class="support-btn">Support Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contact Us</h2> <hr> <br> <br>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3><br>
+                    <p><i class="fas fa-envelope"></i> hatero07@gmail.com</p> <br>
+                    <p><i class="fas fa-phone"></i> 0900 some1 ginjero</p> <br>
+                    <p><i class="fas fa-map-marker-alt"></i> Knowledge City yemibale ketema nw</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>Your go-to digital liberary for reading and discovering amazing PDF books.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> hatero07@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 PDF Reader | Designed by Hatero
+        </div>
+    </footer>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>
