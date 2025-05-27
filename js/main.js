@@ -2,22 +2,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
    
 
-    // Fetch books data
     fetch('data/books.json')
         .then(response => response.json())
         .then(data => {
             const books = data.books;
             
-            // Display featured books (max 10)
+            
             displayFeaturedBooks(books);
             
-            // Display trending books (max 15)
+            
             displayTrendingBooks(books);
             
-            // Display favorite books (max 20)
+            
             displayFavoriteBooks(books);
             
-            // Initialize slider after content is loaded
+           
             setTimeout(() => {
                 initSlider();
             }, 100);
@@ -53,7 +52,7 @@ function displayTrendingBooks(books) {
     const trendingContainer = document.getElementById('trendingBooks');
     const trendingBooks = books.filter(book => book.trending);
     
-    // If more than 15, select randomly
+   
     const displayBooks = trendingBooks.length > 8 ? 
         getRandomItems(trendingBooks, 8) : trendingBooks;
     
@@ -89,7 +88,7 @@ function displayFavoriteBooks(books) {
     displayBooks.forEach((book, index) => {
         const bookElement = document.createElement('div');
         bookElement.className = 'book-card';
-        bookElement.style.animationDelay = `${index * 0.05}s`; // Staggered animation
+        bookElement.style.animationDelay = `${index * 0.05}s`; 
         bookElement.innerHTML = `
             <div class="book-banner" style="background-image: url('${book.banner_img}')"></div>
             <div class="book-info">
@@ -98,7 +97,7 @@ function displayFavoriteBooks(books) {
             </div>
         `;
         
-        // Add click event to navigate to book details page
+       
         bookElement.addEventListener('click', () => {
             window.location.href = `book.html?id=${book.id}`;
         });
@@ -121,11 +120,10 @@ function initSlider() {
     if (!slider || !prevBtn || !nextBtn || books.length === 0) return;
     
     let currentIndex = 0;
-    const bookWidth = books[0].offsetWidth + 20; // Including margin
+    const bookWidth = books[0].offsetWidth + 20; 
     const visibleBooks = Math.floor(slider.offsetWidth / bookWidth);
     const totalBooks = books.length;
     
-    // Center the active booka
     const centerBook = () => {
         const scrollPosition = currentIndex * bookWidth - (slider.offsetWidth / 2 - bookWidth / 2);
         slider.scrollTo({
@@ -134,13 +132,11 @@ function initSlider() {
         });
     };
     
-    // Update button states
     const updateButtons = () => {
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex >= totalBooks - visibleBooks;
     };
     
-    // Navigation functions
     const goNext = () => {
         if (currentIndex < totalBooks - visibleBooks) {
             currentIndex++;
@@ -157,7 +153,6 @@ function initSlider() {
         }
     };
     
-    // Event listeners
     nextBtn.addEventListener('click', goNext);
     prevBtn.addEventListener('click', goPrev);
     
@@ -183,7 +178,6 @@ function initSlider() {
     
     updateButtons();
     
-    // Center first book on load
     setTimeout(centerBook, 100);
 }
 
