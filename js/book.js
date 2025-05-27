@@ -1,29 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu functionality
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('toggle');
-    });
-    
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-links li a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('toggle');
-        });
-    });
 
-    // Get book ID from URL
+
+   
     const urlParams = new URLSearchParams(window.location.search);
     const bookId = urlParams.get('id');
     
     if (bookId) {
         fetchBookDetails(bookId);
     } else {
-        // Redirect if no book ID is provided
+   
         window.location.href = 'books.html';
     }
 });
