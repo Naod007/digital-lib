@@ -1,27 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu functionality
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('toggle');
-    });
-    
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-links li a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('toggle');
-        });
-    });
 
     let currentPage = 1;
     const booksPerPage = 50;
     let allBooks = [];
     let displayedBooks = [];
 
-    // Fetch books data
+    
     fetch('data/books.json')
         .then(response => response.json())
         .then(data => {
@@ -31,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error loading books:', error));
 
-    // Load more functionality
+    
     document.getElementById('loadMore').addEventListener('click', function() {
         currentPage++;
         displayBooks();
     });
 
-    // Search functionality
+   
     document.getElementById('bookSearch').addEventListener('input', function(e) {
         const searchTerm = e.target.value.toLowerCase();
         if (searchTerm === '') {
@@ -58,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const booksContainer = document.getElementById('allBooks');
         const loadMoreBtn = document.getElementById('loadMore');
         
-        // Clear container if it's the first page
+        
         if (currentPage === 1) {
             booksContainer.innerHTML = '';
         }
@@ -88,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
             
-            // Add click event to navigate to book details page
+            
             bookElement.addEventListener('click', () => {
                 window.location.href = `book.html?id=${book.id}`;
             });
@@ -96,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
             booksContainer.appendChild(bookElement);
         });
         
-        // Hide load more button if all books are displayed
+        
         if (endIndex >= displayedBooks.length) {
             loadMoreBtn.style.display = 'none';
         } else {
